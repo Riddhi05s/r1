@@ -1,0 +1,71 @@
+A.	Create VPC 
+VPC only > test-vpc > 10.0.0.0/16
+
+B.	Create IGW
+Test-igw. Attach to own VPC > avail VPC
+
+C.	Create subnets…own VPC
+  a.	Public-subnet > 10.0.0.0/16 & 10.0.0.0/24
+  b.	Private-subnet > 10.0.0.0/16 & 10.0.1.0/24
+
+D.	Create route table
+    Name: public-rt > own VPC > 
+    a.	Edit route > add > local > 0.0.0.0/0 …internet gateway
+    b.	Subnet associations > edit Igw >  select public-subnet
+
+E.	Create web-server instance: 
+Web-server > own network > public subnet > public IP enable > 1a > new sg 
+Add sg> inbound rules: 
+Ssh tcp 22
+All icmp-ipv4 icmp all
+http tcp 80
+
+F.	Open terminal:
+1. sudo su -
+2. yum install httpd -y
+3. cd /var/www/html
+4. echo "my web server" > index.html
+5. cd
+6. systemctl start httpd
+7. systemctl enable httpd
+   (check ip addr on website)
+
+G.	Create new db instance: 
+db-server > own VPC > private subnet > disable >same key> 1a > same sg 
+Add sg> inbound rules: 
+Ssh tcp 22
+All icmp-ipv4 icmp all
+http tcp 80
+
+H.	Open same terminal: 
+    1. ip a s
+    2. ping (@ip-addr)
+ 
+    (Open db-server instance key in notepd ..copy key )
+    3. vim (keypair-name).pem
+       (file opens: paste abv key) save & exit
+
+    4. chmod 400 (keypair-name).pem
+
+I.	Sessions END
+J.	Copy pem -ssh
+(continue in same terminal)
+    1.	sudo su –
+
+K.	Create NAT Gateway
+    Test-ngw > public-subnet > public connectivity type > allocate IP > done
+
+  L.	Open terminal:
+ping google.com
+
+M.	Create route table > public-rt > private subnet > 
+a.	Edit route table: add ..Nat gateway..
+b.	Subnet associations> private select
+
+  ----------------------------------------------------------------------------------------------
+  NEW REGION
+N.	Create new VPC in another region….
+    20.0.0.0/0
+
+O.	Peering connection from old to new region..
+
