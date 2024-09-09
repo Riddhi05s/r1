@@ -25,6 +25,8 @@ Open terminal :
 >ll
 >cd
 
+check on browser thr public ip
+
 Rightclick on the instance > img & temp >Create image
 Click on AMI to the left side  > click on the created image checkbox & launch inst
 Click on the new ami created and open the terminal 
