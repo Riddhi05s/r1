@@ -37,3 +37,38 @@ https://www.youtube.com/@TheDevOpsSchool/search?query=datadog
 TheDevOpsSchool
 🎥 Welcome to DevOpsSchool! 🚀 Your ultimate destination for DevOps, Cloud, and IT training and solutions! At DevOpsSchool, we are committed to transforming IT professionals and organizations with...
  
+------------------------------------------------------------
+
+Summary
+In this lab, you explored the Kubernetes functionality within GKE to create clusters that you can fully configure and manage. Also, you learned how to modify the cluster and deploy a simple workload. Here is a recap of some of the key similarities and differences between GKE and EKS:
+
+Similarities:
+
+EKS and GKE are both managed Kubernetes services that allow customers to deploy, manage, and scale containerized applications in the cloud.
+Both Google Cloud and AWS offer the Kubernetes service as a Platform as a Service (PaaS).
+Both GKE and EKS apply the same principles for containers and deployments to populate a cluster.
+Differences:
+
+In EKS, the worker nodes are provisioned using Amazon Elastic Compute Cloud (EC2) instances, which are managed by the Amazon EKS control plane. In GKE, the worker nodes are provisioned using Google Compute Engine (GCE) instances, which are managed by the GKE control plane.
+In EKS, the worker nodes are created using Amazon Machine Images (AMIs) that are preconfigured with the necessary Kubernetes components and settings. In GKE, the worker nodes are created using Google's Container-Optimized OS, which is also preconfigured with the necessary Kubernetes components and settings.
+In EKS, the worker nodes are managed using the AWS Management Console, AWS CLI, or third-party tools. In GKE, the worker nodes are managed using the Google Cloud Console, gcloud CLI, or third-party tools.
+Currently GKE offers up to 5,000 nodes in a cluster, while in EKS the number of nodes allowed in a cluster is 4,500.
+
+-------------------------
+
+Deploying Google Kubernetes Engine (AWS)
+---------------------------------
+Upgrading Google Kubernetes Engine Clusters
+----------------------------------
+Creating Google Kubernetes Engine Deployments (AWS)
+-----------------------------------
+Configuring Pod Autoscaling and NodePools
+-------------------------------------
+Configuring Google Kubernetes Engine (GKE) Networking
+-------------------------------------
+Configuring Persistent Storage for Google Kubernetes Engine
+--------------------------------------
+
+
+
+
